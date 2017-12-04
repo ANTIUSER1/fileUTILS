@@ -73,36 +73,6 @@ public class ParserMPCString extends AbstractParserString {
         //}
         return result;
     }
-    /*
-     FILE 02.txt
-     0   37344
-     1   C2017
-     2   02
-     3   16.80540503
-     4   01
-     5   30.409-07
-     6   42
-     7   54.57
-     8   13.37
-
-     FILE 02a,txt
-     0   SPEKTR-R
-     1   C2017
-     2   03
-     3   04.81329
-     4   06
-     5   43
-     6   34.00
-     7   +53
-     8   28
-     9   25.4
-     10   15.6
-     11   R
-     12   C40
-     1 2 3 4 8 9 10 11 12  +
-
-     5 6 7
-     */
 
     private boolean testCorrectString(String str) {
         if (str == null) {
@@ -130,18 +100,6 @@ public class ParserMPCString extends AbstractParserString {
             if (p == 3 || p == 9 || p == 10) {
                 result = result && GeneralValidation.validatePureDoubleStr(tmp);
             }
-            //                if (p == 5) {
-//                    System.out.println("  p: " + tmp);
-//                    String[] tmpParts = tmp.split("\\.");
-//                    fithElementhasPoint = tmpParts.length == 2;
-//                    System.out.println(" tmpPartsLen: " + tmpParts.length);
-//                    if (!fithElementhasPoint) {
-//                        isCorrectRecord = isCorrectRecord && GeneralValidation.validatePureNumberStr(tmp);
-//                    } else {
-//
-//                    }
-//
-//                }
 
             if (p == 8) {
                 result = result
@@ -158,6 +116,9 @@ public class ParserMPCString extends AbstractParserString {
             }
 
             p++;
+        }
+        if (result) {
+            attr = "RES";
         }
         return result;
     }
@@ -208,6 +169,9 @@ public class ParserMPCString extends AbstractParserString {
             p++;
         }
 
+        if (result) {
+            attr = "MPC";
+        }
         return result;
     }
 

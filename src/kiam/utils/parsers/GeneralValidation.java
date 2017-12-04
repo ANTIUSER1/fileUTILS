@@ -137,6 +137,10 @@ public class GeneralValidation {
 
     }
 
+    public static String attributeOfData(AbstractParserString ap) {
+        return ap.getAttr();
+    }
+
     /**
      * Converts CP1251 to UTF-8
      *

@@ -57,6 +57,9 @@ public class ParserTCString extends AbstractParserString {
 //            System.out.println("      " + tmp + "/" + result);
 
         }
+        if (result) {
+            attr = "TC";
+        }
         return result;
     }
 

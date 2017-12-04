@@ -16,6 +16,7 @@ abstract public class AbstractParserString {
 
     protected ArrayList<String> dataBlocks = new ArrayList<String>();
     protected String dataToParse = "";
+    protected String attr = "";
 
     /**
      *
@@ -88,5 +89,9 @@ abstract public class AbstractParserString {
      */
     public boolean isValidDataBlocks() {
         return false;
+    }
+
+    public String getAttr() {
+        return attr;
     }
 }

@@ -77,11 +77,14 @@ public class ParserRESStrings extends AbstractParserString {
         TestValidRESString testValidStr = new TestValidRESString();
         for (int k = 0; k < dataBlocks.size(); k++) {
             String block = dataBlocks.get(k);
-            System.out.println(" block: " + block);
+//            System.out.println(" block: " + block);
             boolean tmp = testValidStr.validateBlockData(block);
             result = result && tmp;
-            System.out.println("      " + tmp + "/" + result);
+//            System.out.println("      " + tmp + "/" + result);
 
+        }
+        if (result) {
+            attr = "RES";
         }
 //        System.out.println("               " + result);
         return result;
